@@ -24,8 +24,12 @@ function Navbar({ theme, onToggleTheme }) {
           className="group flex items-center gap-3"
           aria-label="Yash Kumar home"
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-md bg-cyan-300 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20">
-            YK
+          <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-md border border-cyan-300/30 bg-white p-1 shadow-lg shadow-cyan-500/20">
+            <img
+              src="/logo.webp"
+              alt="Yash logo"
+              className="h-full w-full object-contain"
+            />
           </span>
           <span className="font-semibold text-white transition-colors group-hover:text-cyan-200">
             Yash Kumar
