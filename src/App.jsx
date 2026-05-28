@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import Stats from './components/Stats.jsx'
@@ -11,10 +12,24 @@ import Footer from './components/Footer.jsx'
 import AnimatedGridBackground from './components/ui/AnimatedGridBackground.jsx'
 
 function App() {
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === 'undefined') return 'dark'
+    return localStorage.getItem('theme') || 'dark'
+  })
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'))
+  }
+
   return (
-    <div className="min-h-screen overflow-hidden bg-[#080b12] text-slate-100">
+    <div className="app-shell min-h-screen overflow-hidden text-slate-100">
       <AnimatedGridBackground />
-      <Navbar />
+      <Navbar theme={theme} onToggleTheme={toggleTheme} />
       <main className="relative z-10">
         <Hero />
         <Stats />

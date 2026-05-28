@@ -13,7 +13,7 @@ const techStack = [
 
 function FloatingTechStack() {
   return (
-    <div className="relative mx-auto min-h-[430px] w-full max-w-[520px]">
+    <div className="relative mx-auto min-h-[390px] w-full max-w-[520px] overflow-hidden sm:min-h-[430px] sm:overflow-visible">
       <div className="absolute inset-x-6 top-10 h-72 rounded-full bg-cyan-400/12 blur-3xl" />
       <div className="absolute inset-x-10 bottom-12 h-48 rounded-full bg-purple-500/10 blur-3xl" />
 
@@ -44,7 +44,7 @@ function FloatingTechStack() {
         </div>
       </motion.div>
 
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 origin-center scale-[0.86] sm:scale-100">
         {techStack.map((tech, index) => {
           const Icon = tech.icon
           const angle = (index / techStack.length) * Math.PI * 2
@@ -56,7 +56,7 @@ function FloatingTechStack() {
           return (
             <motion.div
               key={tech.label}
-              className="absolute left-1/2 top-1/2 flex items-center gap-2 rounded-md border border-white/12 bg-slate-950/78 px-3.5 py-2.5 text-sm font-semibold text-white shadow-2xl shadow-black/25 backdrop-blur-xl"
+              className="absolute left-1/2 top-1/2 flex items-center gap-2 rounded-md border border-white/12 bg-slate-950/78 px-3 py-2 text-xs font-semibold text-white shadow-2xl shadow-black/25 backdrop-blur-xl sm:px-3.5 sm:py-2.5 sm:text-sm"
               style={{ marginLeft: x, marginTop: y }}
               animate={{ y: [0, index % 2 === 0 ? -10 : 10, 0] }}
               transition={{ duration: 4 + index * 0.35, repeat: Infinity, ease: 'easeInOut' }}

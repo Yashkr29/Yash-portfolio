@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FileDown, Menu, X } from 'lucide-react'
+import { FileDown, Menu, Moon, Sun, X } from 'lucide-react'
 import { links, scrollToSection } from '../utils/navigation.js'
 
 const navLinks = [
@@ -11,11 +11,12 @@ const navLinks = [
   { label: 'Contact', id: 'contact' },
 ]
 
-function Navbar() {
+function Navbar({ theme, onToggleTheme }) {
   const [isOpen, setIsOpen] = useState(false)
+  const isDark = theme === 'dark'
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#080b12]/72 backdrop-blur-xl">
+    <header className="nav-header fixed left-0 right-0 top-0 z-50 border-b backdrop-blur-xl">
       <nav className="section-shell flex h-16 items-center justify-between">
         <button
           type="button"
@@ -53,19 +54,39 @@ function Navbar() {
           </a>
         </div>
 
+        <div className="flex items-center gap-2 lg:hidden">
+          <button
+            type="button"
+            onClick={onToggleTheme}
+            className="theme-toggle inline-flex h-10 w-10 items-center justify-center rounded-md border"
+            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+
+          <button
+            type="button"
+            className="theme-toggle inline-flex h-10 w-10 items-center justify-center rounded-md border"
+            onClick={() => setIsOpen((value) => !value)}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/6 text-slate-100 md:hidden"
-          onClick={() => setIsOpen((value) => !value)}
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={isOpen}
+          onClick={onToggleTheme}
+          className="theme-toggle hidden h-10 w-10 items-center justify-center rounded-md border lg:inline-flex"
+          aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
         >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
+          {isDark ? <Sun size={18} /> : <Moon size={18} />}
         </button>
       </nav>
 
       {isOpen && (
-        <div className="border-t border-white/10 bg-[#080b12]/96 px-4 py-4 shadow-2xl md:hidden">
+        <div className="nav-mobile border-t px-4 py-4 shadow-2xl lg:hidden">
           <div className="mx-auto flex max-w-xl flex-col gap-2">
             {navLinks.map((link) => (
               <button
