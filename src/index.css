@@ -127,6 +127,20 @@ textarea {
   color: var(--success-text) !important;
 }
 
+.about-callout {
+  background: linear-gradient(135deg, #e0f2fe 0%, #67e8f9 34%, #a78bfa 68%, #38bdf8 100%);
+  box-shadow: var(--panel-shadow);
+}
+
+.about-callout-inner {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+}
+
+:root[data-theme="dark"] .about-callout-inner {
+  background: rgba(8, 13, 24, 0.88);
+}
+
 .theme-background {
   background: var(--page-bg);
 }
