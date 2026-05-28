@@ -8,6 +8,10 @@
   --body-text: #cbd5e1;
   --muted-text: #94a3b8;
   --soft-text: #bae6fd;
+  --accent-text: #bae6fd;
+  --success-text: #bbf7d0;
+  --warning-text: #fde68a;
+  --button-dark-text: #020617;
   --nav-bg: rgba(7, 10, 18, 0.76);
   --nav-border: rgba(255, 255, 255, 0.1);
   --panel-bg: linear-gradient(145deg, rgba(15, 23, 42, 0.82), rgba(2, 6, 23, 0.7));
@@ -26,6 +30,10 @@
   --body-text: #243244;
   --muted-text: #536276;
   --soft-text: #075985;
+  --accent-text: #0369a1;
+  --success-text: #047857;
+  --warning-text: #92400e;
+  --button-dark-text: #020617;
   --nav-bg: rgba(248, 251, 255, 0.8);
   --nav-border: rgba(15, 23, 42, 0.1);
   --panel-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(236, 248, 255, 0.76));
@@ -97,6 +105,26 @@ textarea {
 .theme-toggle:hover {
   transform: translateY(-1px);
   border-color: rgba(34, 211, 238, 0.46);
+}
+
+.theme-heading {
+  color: var(--heading-text) !important;
+}
+
+.theme-body {
+  color: var(--body-text) !important;
+}
+
+.theme-muted {
+  color: var(--muted-text) !important;
+}
+
+.theme-accent {
+  color: var(--accent-text) !important;
+}
+
+.theme-success {
+  color: var(--success-text) !important;
 }
 
 .theme-background {
@@ -228,11 +256,24 @@ textarea {
 
 :root[data-theme="light"] .text-cyan-100,
 :root[data-theme="light"] .text-cyan-200,
+:root[data-theme="light"] .text-cyan-300 {
+  color: var(--accent-text) !important;
+}
+
 :root[data-theme="light"] .text-emerald-100,
 :root[data-theme="light"] .text-emerald-200,
+:root[data-theme="light"] .text-emerald-300,
+:root[data-theme="light"] .text-emerald-50 {
+  color: var(--success-text) !important;
+}
+
 :root[data-theme="light"] .text-amber-100,
 :root[data-theme="light"] .text-purple-100 {
   color: var(--soft-text) !important;
+}
+
+:root[data-theme="light"] .text-slate-950 {
+  color: var(--button-dark-text) !important;
 }
 
 :root[data-theme="light"] .bg-slate-950\/78,
@@ -241,6 +282,41 @@ textarea {
 :root[data-theme="light"] .bg-white\/8,
 :root[data-theme="light"] .bg-white\/10 {
   background-color: var(--chip-bg) !important;
+}
+
+:root[data-theme="light"] .bg-cyan-300 {
+  background-color: #22d3ee !important;
+}
+
+:root[data-theme="light"] .bg-white {
+  background-color: #0f172a !important;
+}
+
+:root[data-theme="light"] .bg-white.text-slate-950,
+:root[data-theme="light"] .bg-white .text-slate-950 {
+  color: #f8fafc !important;
+}
+
+:root[data-theme="light"] .bg-emerald-300\/8,
+:root[data-theme="light"] .bg-emerald-300\/10,
+:root[data-theme="light"] .bg-emerald-300\/12,
+:root[data-theme="light"] .bg-emerald-300\/14 {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+}
+
+:root[data-theme="light"] .bg-cyan-300\/8,
+:root[data-theme="light"] .bg-cyan-300\/10,
+:root[data-theme="light"] .bg-cyan-300\/12 {
+  background-color: rgba(8, 145, 178, 0.1) !important;
+}
+
+:root[data-theme="light"] .bg-purple-300\/10 {
+  background-color: rgba(124, 58, 237, 0.1) !important;
+}
+
+:root[data-theme="light"] .bg-amber-300\/10,
+:root[data-theme="light"] .bg-amber-300\/12 {
+  background-color: rgba(217, 119, 6, 0.12) !important;
 }
 
 :root[data-theme="light"] input,

@@ -41,7 +41,7 @@ function Services() {
               <GradientText>What I Can Build</GradientText>
             </h2>
           </div>
-          <p className="text-base leading-7 text-slate-400">
+          <p className="theme-muted text-base leading-7 text-slate-400">
             Practical web solutions for startups, students, businesses, and early-stage products.
           </p>
         </div>
@@ -59,8 +59,8 @@ function Services() {
               >
                 <SpotlightCard className="h-full p-5 transition hover:-translate-y-1">
                   <Icon className="mb-5 text-cyan-200" size={24} />
-                  <h3 className="text-base font-semibold text-white">{service.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-400">{service.description}</p>
+                  <h3 className="theme-heading text-base font-semibold text-white">{service.title}</h3>
+                  <p className="theme-muted mt-3 text-sm leading-6 text-slate-400">{service.description}</p>
                 </SpotlightCard>
               </motion.article>
             )

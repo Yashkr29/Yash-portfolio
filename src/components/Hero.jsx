@@ -25,14 +25,14 @@ function Hero() {
             <span>Open to Remote Internships & Freelance Projects</span>
           </div>
 
-          <h1 className="max-w-4xl text-4xl font-black leading-[1.08] text-white sm:text-6xl lg:text-7xl">
+          <h1 className="theme-heading max-w-4xl text-4xl font-black leading-[1.08] text-white sm:text-6xl lg:text-7xl">
             <BlurText text="Hey, I'm Yash" />
           </h1>
-          <p className="mt-6 max-w-2xl text-xl font-bold leading-8 text-white sm:text-3xl sm:leading-10">
+          <p className="theme-heading mt-6 max-w-2xl text-xl font-bold leading-8 text-white sm:text-3xl sm:leading-10">
             <GradientText>Full-Stack Developer</GradientText> building scalable web apps,
             dashboards, and AI-powered products.
           </p>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
+          <p className="theme-muted mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
             I build practical, deployable, and business-focused web solutions using React, Spring
             Boot, Firebase, REST APIs, and modern deployment tools.
           </p>

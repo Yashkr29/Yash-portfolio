@@ -27,7 +27,7 @@ function Skills() {
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             <GradientText>Skills & Technologies</GradientText>
           </h2>
-          <p className="mt-4 text-base leading-7 text-slate-400">
+          <p className="theme-muted mt-4 text-base leading-7 text-slate-400">
             Frontend polish, backend fundamentals, real databases, and AI integrations for
             internship, freelance, and startup workflows.
           </p>
@@ -49,7 +49,7 @@ function Skills() {
                     <span className="flex h-11 w-11 items-center justify-center rounded-md bg-white/10 text-cyan-100">
                       <Icon size={22} />
                     </span>
-                    <h3 className="text-xl font-semibold text-white">{group.category}</h3>
+                    <h3 className="theme-heading text-xl font-semibold text-white">{group.category}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {group.items.map((skill) => (

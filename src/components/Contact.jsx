@@ -36,7 +36,7 @@ function Contact() {
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             <GradientText>Let&apos;s Build Something Practical</GradientText>
           </h2>
-          <p className="mt-4 text-base leading-7 text-slate-400">
+          <p className="theme-muted mt-4 text-base leading-7 text-slate-400">
             I am open to remote internships, freelance projects, startup collaborations, and
             full-stack development opportunities.
           </p>
@@ -57,8 +57,8 @@ function Contact() {
                     <Icon size={22} />
                   </span>
                   <span>
-                    <span className="block text-sm text-slate-400">{contact.label}</span>
-                    <span className="block break-all font-semibold text-white">{contact.value}</span>
+                    <span className="theme-muted block text-sm text-slate-400">{contact.label}</span>
+                    <span className="theme-heading block break-all font-semibold text-white">{contact.value}</span>
                   </span>
                 </button>
               )

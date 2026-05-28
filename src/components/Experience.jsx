@@ -22,7 +22,7 @@ function Experience() {
       >
         <div className="mb-12 max-w-3xl">
           <p className="mb-3 text-sm font-semibold uppercase text-emerald-200">Experience</p>
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">Internship experience and active availability.</h2>
+          <h2 className="theme-heading text-3xl font-bold text-white sm:text-4xl">Internship experience and active availability.</h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
@@ -32,8 +32,8 @@ function Experience() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-cyan-300/12 text-cyan-100">
                   <BriefcaseBusiness size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Full Stack Developer Intern</h3>
-                <p className="mt-2 flex items-center gap-2 text-slate-300">
+                <h3 className="theme-heading text-2xl font-bold text-white">Full Stack Developer Intern</h3>
+                <p className="theme-body mt-2 flex items-center gap-2 text-slate-300">
                   <MapPin size={17} className="text-emerald-200" />
                   AIValytics
                 </p>
@@ -43,7 +43,7 @@ function Experience() {
               </span>
             </div>
 
-            <p className="mt-6 text-base leading-8 text-slate-300">
+            <p className="theme-body mt-6 text-base leading-8 text-slate-300">
               Selected as a Full Stack Developer Intern to contribute to AI-driven web solutions,
               backend systems, dashboards, and scalable product features.
             </p>
@@ -62,11 +62,11 @@ function Experience() {
               <div className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-300/12 text-amber-100">
                 <Rocket size={23} />
               </div>
-              <h3 className="text-2xl font-bold text-white">Open to</h3>
+              <h3 className="theme-heading text-2xl font-bold text-white">Open to</h3>
             </div>
             <div className="grid gap-3">
               {openTo.map((item) => (
-                <div key={item} className="flex items-center gap-3 text-slate-200">
+                <div key={item} className="theme-body flex items-center gap-3 text-slate-200">
                   <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-emerald-300/14 text-emerald-200">
                     <Check size={15} />
                   </span>

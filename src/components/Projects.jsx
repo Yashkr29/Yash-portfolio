@@ -25,9 +25,9 @@ function ProjectCard({ project, index }) {
           </div>
         </div>
 
-        <h3 className="text-2xl font-bold text-white">{project.name}</h3>
-        <p className="mt-3 text-sm font-semibold text-cyan-100">{project.tagline}</p>
-        <p className="mt-5 text-sm leading-7 text-slate-400">{project.description}</p>
+        <h3 className="theme-heading text-2xl font-bold text-white">{project.name}</h3>
+        <p className="theme-accent mt-3 text-sm font-semibold text-cyan-100">{project.tagline}</p>
+        <p className="theme-muted mt-5 text-sm leading-7 text-slate-400">{project.description}</p>
 
         <div className="mt-5 flex flex-wrap gap-2">
           {project.techStack.map((tech) => (
@@ -37,7 +37,7 @@ function ProjectCard({ project, index }) {
           ))}
         </div>
 
-        <ul className="mt-6 grid gap-3 text-sm text-slate-300">
+        <ul className="theme-body mt-6 grid gap-3 text-sm text-slate-300">
           {project.features.map((feature) => (
             <li key={feature} className="flex gap-3">
               <CheckCircle2 className="mt-0.5 shrink-0 text-emerald-300" size={17} />
@@ -46,8 +46,8 @@ function ProjectCard({ project, index }) {
           ))}
         </ul>
 
-        <div className="mt-6 rounded-md border border-emerald-300/15 bg-emerald-300/8 p-4 text-sm leading-6 text-emerald-50">
-          <span className="mb-1 flex items-center gap-2 font-semibold text-emerald-200">
+        <div className="theme-success mt-6 rounded-md border border-emerald-300/15 bg-emerald-300/8 p-4 text-sm leading-6 text-emerald-50">
+          <span className="theme-success mb-1 flex items-center gap-2 font-semibold text-emerald-200">
             <Target size={16} /> Impact
           </span>
           {project.impact}
@@ -89,7 +89,7 @@ function Projects() {
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             <GradientText>Featured Projects</GradientText>
           </h2>
-          <p className="mt-4 text-base leading-7 text-slate-400">
+          <p className="theme-muted mt-4 text-base leading-7 text-slate-400">
             Data-driven project cards with deployable product thinking: auth, dashboards, APIs,
             analytics, and AI recommendations.
           </p>
