@@ -7,7 +7,7 @@ This portfolio is designed for remote internships, freelance projects, startup c
 ## Live Demo
 
 Live Website: Add your Vercel link here  
-GitHub Repository: Add your GitHub repo link here
+GitHub Repository: (https://github.com/Yashkr29/Yash-portfolio)
 
 ---
 
