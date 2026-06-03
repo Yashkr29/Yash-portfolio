@@ -4,7 +4,7 @@ import { links, openEmail, openExternalLink, scrollToSection } from '../utils/na
 
 function Hero() {
   return (
-    <section id="home" className="section-pad scroll-mt-24">
+    <section id="home" className="hero-section scroll-mt-24">
       <div className="section-shell">
         <motion.div
           className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end"
