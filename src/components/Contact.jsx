@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
 import { GitBranch, Mail, MapPin, Network, Send } from 'lucide-react'
 import { links, openEmail, openExternalLink } from '../utils/navigation.js'
@@ -9,20 +11,87 @@ const contactItems = [
   { label: 'Location', value: 'Pune, India', icon: MapPin },
 ]
 
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+const initialFormData = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+}
+
 function Contact() {
-  const handleSubmit = (event) => {
+  const [formData, setFormData] = useState(initialFormData)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [status, setStatus] = useState({ type: '', message: '' })
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setFormData((current) => ({ ...current, [name]: value }))
+  }
+
+  const getValidationMessage = () => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (!formData.name.trim()) return 'Please enter your name.'
+    if (!emailPattern.test(formData.email.trim())) return 'Please enter a valid email address.'
+    if (!formData.subject.trim()) return 'Please add a subject.'
+    if (formData.message.trim().length < 10) return 'Please write a message of at least 10 characters.'
+
+    return ''
+  }
+
+  const handleSubmit = async (event) => {
     event.preventDefault()
 
-    const formData = new FormData(event.currentTarget)
-    const name = formData.get('name')
-    const email = formData.get('email')
-    const message = formData.get('message')
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`)
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)
+    const validationMessage = getValidationMessage()
 
-    window.location.href = `mailto:${links.email}?subject=${subject}&body=${body}`
-    alert('Thanks for reaching out! Your email app will open so you can send the message.')
-    event.currentTarget.reset()
+    if (validationMessage) {
+      setStatus({ type: 'error', message: validationMessage })
+      return
+    }
+
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      setStatus({
+        type: 'error',
+        message: 'Email service is not configured yet. Please email me directly.',
+      })
+      return
+    }
+
+    setIsSubmitting(true)
+    setStatus({ type: '', message: '' })
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          subject: formData.subject.trim(),
+          message: formData.message.trim(),
+          to_email: 'yashkr7970@gmail.com',
+        },
+        PUBLIC_KEY,
+      )
+
+      setStatus({
+        type: 'success',
+        message: 'Message sent successfully. I will get back to you soon.',
+      })
+      setFormData(initialFormData)
+    } catch (error) {
+      console.error('EmailJS send failed:', error)
+      setStatus({
+        type: 'error',
+        message: 'Something went wrong. Please try again or email me directly.',
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -34,7 +103,7 @@ function Contact() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.45 }}
       >
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <p className="kicker mb-5">Contact</p>
             <h2 className="section-title">Let&apos;s Build Something Practical</h2>
@@ -73,25 +142,78 @@ function Contact() {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="editorial-card p-6 sm:p-8">
-            <div className="grid gap-5">
+          <form onSubmit={handleSubmit} className="editorial-card contact-form-card w-full justify-self-stretch p-6 sm:p-7 lg:justify-self-end lg:p-8">
+            <div className="grid gap-5 sm:grid-cols-2">
               <label className="grid gap-2">
                 <span className="text-sm font-bold text-[#F5F1EA]">Name</span>
-                <input type="text" name="name" required className="form-field" placeholder="Your name" />
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="form-field"
+                  placeholder="Your name"
+                />
               </label>
 
               <label className="grid gap-2">
                 <span className="text-sm font-bold text-[#F5F1EA]">Email</span>
-                <input type="email" name="email" required className="form-field" placeholder="you@example.com" />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="form-field"
+                  placeholder="you@example.com"
+                />
               </label>
 
-              <label className="grid gap-2">
+              <label className="grid gap-2 sm:col-span-2">
+                <span className="text-sm font-bold text-[#F5F1EA]">Subject</span>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="form-field"
+                  placeholder="Project, internship, or collaboration"
+                />
+              </label>
+
+              <label className="grid gap-2 sm:col-span-2">
                 <span className="text-sm font-bold text-[#F5F1EA]">Message</span>
-                <textarea name="message" required className="form-field" placeholder="Tell me about your project or opportunity" />
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="form-field contact-message-field"
+                  placeholder="Tell me about your project or opportunity"
+                />
               </label>
 
-              <button type="submit" className="solid-btn">
-                Send Message <Send size={18} />
+              {status.message && (
+                <p
+                  className={`sm:col-span-2 border px-4 py-3 text-sm leading-6 ${
+                    status.type === 'success'
+                      ? 'border-emerald-300/25 text-emerald-200'
+                      : 'border-red-300/25 text-red-200'
+                  }`}
+                  role="status"
+                >
+                  {status.message}
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="solid-btn contact-submit-button sm:col-span-2 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'} {!isSubmitting && <Send size={18} />}
               </button>
             </div>
           </form>

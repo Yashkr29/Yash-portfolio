@@ -1,42 +1,42 @@
 export const services = [
   {
-    title: 'Portfolio Websites',
-    description: 'Modern personal websites for students, developers, and freelancers.',
-    icon: 'globe',
-  },
-  {
-    title: 'Business Landing Pages',
-    description: 'Conversion-focused landing pages for products and services.',
-    icon: 'appWindow',
-  },
-  {
-    title: 'Admin Dashboards',
-    description: 'Create dashboards for analytics, management, and internal tools.',
-    icon: 'barChart',
-  },
-  {
     title: 'Full-Stack Web Apps',
-    description: 'End-to-end apps with authentication, database, and APIs.',
+    description: 'End-to-end applications with frontend, backend, database, authentication, and APIs.',
     icon: 'boxes',
   },
   {
-    title: 'Firebase Applications',
-    description: 'Real-time apps using Firebase Auth, Firestore, and hosting.',
-    icon: 'shield',
+    title: 'Startup MVPs',
+    description: 'Launch-ready product prototypes for early-stage startup ideas and validation.',
+    icon: 'gauge',
+  },
+  {
+    title: 'Admin Dashboards',
+    description: 'Dashboards for analytics, management, reporting, and internal business tools.',
+    icon: 'barChart',
   },
   {
     title: 'REST API Integration',
-    description: 'Connect frontend apps with backend APIs and third-party services.',
+    description: 'Connecting frontend interfaces with backend systems and third-party services.',
     icon: 'plug',
   },
   {
+    title: 'Firebase Applications',
+    description: 'Auth, Firestore, real-time dashboards, and lightweight MVPs using Firebase.',
+    icon: 'shield',
+  },
+  {
     title: 'Assessment Platforms',
-    description: 'Quiz, test, and analytics platforms for students and companies.',
+    description: 'Quiz, coding test, analytics, and student performance systems.',
     icon: 'fileCode',
   },
   {
-    title: 'Startup MVPs',
-    description: 'Build launch-ready MVPs with clean frontend, backend, and deployment.',
-    icon: 'gauge',
+    title: 'Business Landing Pages',
+    description: 'Conversion-focused pages for products, services, events, and campaigns.',
+    icon: 'appWindow',
+  },
+  {
+    title: 'Portfolio Websites',
+    description: 'Clean personal websites for developers, students, and freelancers.',
+    icon: 'globe',
   },
 ]

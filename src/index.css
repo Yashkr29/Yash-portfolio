@@ -222,9 +222,9 @@ textarea {
 }
 
 .form-field {
-  min-height: 3.1rem;
+  min-height: 3rem;
   border: 1px solid var(--border);
-  border-radius: 0.35rem;
+  border-radius: 0.75rem;
   background: #0D0D0D;
   color: var(--text);
   padding-inline: 1rem;
@@ -247,6 +247,22 @@ textarea.form-field {
   min-height: 9rem;
   padding-block: 0.9rem;
   resize: none;
+}
+
+.contact-form-card {
+  max-width: 680px;
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(145deg, rgba(20, 20, 20, 0.96), rgba(8, 8, 8, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+textarea.contact-message-field {
+  min-height: 7rem;
+}
+
+.contact-submit-button {
+  width: 100%;
 }
 
 @media (max-width: 640px) {

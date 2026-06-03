@@ -15,7 +15,7 @@ function Hero() {
         >
           <div>
             <p className="mb-7 text-base font-black uppercase tracking-[0.18em] text-[#F5F1EA] sm:text-lg">
-              &#123;HEY, I&apos;M YASH&#125;
+              &#123;Heyy, I&apos;m YASH&#125;
             </p>
             <h1 className="editorial-title">
   <span className="block">
