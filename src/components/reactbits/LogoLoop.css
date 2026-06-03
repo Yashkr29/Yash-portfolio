@@ -1,0 +1,85 @@
+.logo-loop {
+  position: relative;
+  width: 100%;
+  min-height: calc(var(--logo-loop-height) + 28px);
+  overflow: hidden;
+}
+
+.logo-loop-track {
+  display: flex;
+  width: max-content;
+  gap: var(--logo-loop-gap);
+  animation: logo-loop-scroll var(--logo-loop-duration) linear infinite;
+  will-change: transform;
+}
+
+.logo-loop-right .logo-loop-track {
+  animation-direction: reverse;
+}
+
+.logo-loop:hover .logo-loop-track {
+  animation-duration: var(--logo-loop-hover-duration);
+}
+
+.logo-loop-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: var(--logo-loop-gap);
+}
+
+.logo-loop-default-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  white-space: nowrap;
+}
+
+.logo-loop-scale .logo-loop-group > * {
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.logo-loop-scale .logo-loop-group > *:hover {
+  transform: translateY(-1px) scale(1.03);
+}
+
+.logo-loop-fade::before,
+.logo-loop-fade::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: min(86px, 24%);
+  content: "";
+  pointer-events: none;
+}
+
+.logo-loop-fade::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--logo-loop-fade-color), transparent);
+}
+
+.logo-loop-fade::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--logo-loop-fade-color), transparent);
+}
+
+@keyframes logo-loop-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(calc(-50% - (var(--logo-loop-gap) / 2)), 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-loop-track {
+    animation: none;
+    transform: none;
+  }
+}

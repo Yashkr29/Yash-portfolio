@@ -1,15 +1,5 @@
 export const services = [
   {
-    title: 'Startup MVPs',
-    description: 'Build launch-ready MVPs with clean frontend, backend, and deployment.',
-    icon: 'gauge',
-  },
-  {
-    title: 'Admin Dashboards',
-    description: 'Create dashboards for analytics, management, and internal tools.',
-    icon: 'barChart',
-  },
-  {
     title: 'Portfolio Websites',
     description: 'Modern personal websites for students, developers, and freelancers.',
     icon: 'globe',
@@ -18,6 +8,11 @@ export const services = [
     title: 'Business Landing Pages',
     description: 'Conversion-focused landing pages for products and services.',
     icon: 'appWindow',
+  },
+  {
+    title: 'Admin Dashboards',
+    description: 'Create dashboards for analytics, management, and internal tools.',
+    icon: 'barChart',
   },
   {
     title: 'Full-Stack Web Apps',
@@ -38,5 +33,10 @@ export const services = [
     title: 'Assessment Platforms',
     description: 'Quiz, test, and analytics platforms for students and companies.',
     icon: 'fileCode',
+  },
+  {
+    title: 'Startup MVPs',
+    description: 'Build launch-ready MVPs with clean frontend, backend, and deployment.',
+    icon: 'gauge',
   },
 ]

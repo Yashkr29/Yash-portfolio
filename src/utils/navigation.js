@@ -25,6 +25,10 @@ export const handlePlaceholderLink = () => {
   alert('Link will be added soon.')
 }
 
+export const handleProjectLink = (url) => {
+  openExternalLink(url)
+}
+
 export const openEmail = () => {
   window.location.href = `mailto:${links.email}`
 }

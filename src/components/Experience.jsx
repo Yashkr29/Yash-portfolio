@@ -1,80 +1,66 @@
 import { motion } from 'framer-motion'
-import { BriefcaseBusiness, Check, MapPin, Rocket } from 'lucide-react'
 
-const openTo = [
-  'Remote internships',
-  'Freelance web projects',
-  'Startup collaborations',
-  'Full-stack development roles',
+const experiences = [
+  {
+    role: 'Generative AI Intern',
+    company: 'Prodigy Infotech',
+    description:
+      'Worked on Generative AI mini-projects involving text generation, image generation, prompt engineering, chatbot workflows, and model experimentation.',
+    tags: ['Generative AI', 'Prompt Engineering', 'Transformers', 'Chatbots'],
+  },
+  {
+    role: 'Full Stack Developer Intern',
+    company: 'AIValytics',
+    description:
+      'Selected as a Full Stack Developer Intern to contribute to AI-driven web solutions, backend systems, dashboards, and scalable product features.',
+    tags: ['React', 'Backend APIs', 'AI Products', 'Dashboards'],
+  },
 ]
-
-const tags = ['React', 'Backend APIs', 'AI Products', 'Dashboards']
 
 function Experience() {
   return (
-    <section id="experience" className="scroll-mt-24 py-24">
+    <section id="experience" className="section-pad section-line scroll-mt-24">
       <motion.div
         className="section-shell"
-        initial={{ opacity: 0, y: 28 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.25 }}
-        transition={{ duration: 0.65 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.45 }}
       >
-        <div className="mb-12 max-w-3xl">
-          <p className="mb-3 text-sm font-semibold uppercase text-emerald-200">Experience</p>
-          <h2 className="theme-heading text-3xl font-bold text-white sm:text-4xl">Internship experience and active availability.</h2>
+        <div className="mb-12 grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+          <div>
+            <p className="kicker mb-5">Experience</p>
+            <h2 className="section-title">Professional Snapshots</h2>
+          </div>
+          <p className="max-w-2xl text-lg leading-8 text-[#A8A29E]">
+            Focused internship work across AI workflows, backend systems, dashboards, and product features.
+          </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <article className="glass-panel rounded-lg p-6 sm:p-8">
-            <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+        <div className="grid">
+          {experiences.map((item) => (
+            <article
+              key={`${item.role}-${item.company}`}
+              className="editorial-row grid gap-6 py-7 md:grid-cols-[0.34fr_1fr]"
+            >
               <div>
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-cyan-300/12 text-cyan-100">
-                  <BriefcaseBusiness size={24} />
-                </div>
-                <h3 className="theme-heading text-2xl font-bold text-white">Full Stack Developer Intern</h3>
-                <p className="theme-body mt-2 flex items-center gap-2 text-slate-300">
-                  <MapPin size={17} className="text-emerald-200" />
-                  AIValytics
-                </p>
+                <p className="kicker">{item.company}</p>
+                <h3 className="mt-3 text-3xl font-black uppercase tracking-[-0.05em] text-[#F5F1EA]">
+                  {item.role}
+                </h3>
               </div>
-              <span className="rounded-md border border-emerald-300/20 bg-emerald-300/10 px-3 py-2 text-sm font-semibold text-emerald-100">
-                Selected
-              </span>
-            </div>
-
-            <p className="theme-body mt-6 text-base leading-8 text-slate-300">
-              Selected as a Full Stack Developer Intern to contribute to AI-driven web solutions,
-              backend systems, dashboards, and scalable product features.
-            </p>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              {tags.map((tag) => (
-                <span key={tag} className="rounded-md bg-white/8 px-3 py-2 text-sm text-slate-200">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </article>
-
-          <article className="gradient-border rounded-lg p-6 sm:p-8">
-            <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-md bg-amber-300/12 text-amber-100">
-                <Rocket size={23} />
-              </div>
-              <h3 className="theme-heading text-2xl font-bold text-white">Open to</h3>
-            </div>
-            <div className="grid gap-3">
-              {openTo.map((item) => (
-                <div key={item} className="theme-body flex items-center gap-3 text-slate-200">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-emerald-300/14 text-emerald-200">
-                    <Check size={15} />
-                  </span>
-                  {item}
+              <div>
+                <p className="max-w-3xl leading-7 text-[#A8A29E]">{item.description}</p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <span key={tag} className="meta-pill">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </article>
+              </div>
+            </article>
+          ))}
         </div>
       </motion.div>
     </section>
