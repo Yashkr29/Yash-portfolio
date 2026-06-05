@@ -42,7 +42,7 @@ const skillRows = [
       { node: <FaJava />, title: 'Java' },
       { node: <SiSpringboot />, title: 'Spring Boot' },
       { node: <Code2 size={22} />, title: 'REST APIs' },
-      { node: <SiNodedotjs />, title: 'Node.js Basics' },
+      { node: <SiNodedotjs />, title: 'Node.js' },
     ],
   },
   {
@@ -63,14 +63,14 @@ const skillRows = [
       { node: <SiGithub />, title: 'GitHub' },
       { node: <SiVercel />, title: 'Vercel' },
       { node: <SiPostman />, title: 'Postman' },
-      { node: <SiVscodium />, title: 'VS Code' },
+      
     ],
   },
   {
     category: 'AI/ML',
     direction: 'left',
     logos: [
-      { node: <SiPython />, title: 'Machine Learning Basics' },
+      { node: <SiPython />, title: 'Machine Learning' },
       { node: <SiOpenai />, title: 'Generative AI' },
       { node: <WandSparkles size={22} />, title: 'Prompt Engineering' },
       { node: <Plug size={22} />, title: 'API Integration' },

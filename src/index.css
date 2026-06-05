@@ -88,14 +88,6 @@ textarea {
   padding-block: 6rem;
 }
 
-.hero-section {
-  display: flex;
-  min-height: 100vh;
-  min-height: 100svh;
-  align-items: center;
-  padding-block: 7rem 5rem;
-}
-
 .section-line {
   border-top: 1px solid var(--border);
 }
@@ -272,12 +264,6 @@ textarea.contact-message-field {
 
   .section-pad {
     padding-block: 4.5rem;
-  }
-
-  .hero-section {
-    min-height: 100vh;
-    min-height: 100svh;
-    padding-block: 6.5rem 4rem;
   }
 
   .site-rays {
