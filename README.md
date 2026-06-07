@@ -6,7 +6,7 @@ This portfolio is designed for remote internships, freelance projects, startup c
 
 ## Live Demo
 
-Live Website: [Add your Vercel link here ](https://yash-portfolio-two-sigma.vercel.app/) 
+Live Website: [portfolio ](https://yash-portfolio-two-sigma.vercel.app/) 
 GitHub Repository: (https://github.com/Yashkr29/Yash-portfolio)
 
 ---
