@@ -51,7 +51,7 @@ function FloatingNav({ navItems = [] }) {
         <a
           href={links.resume}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="hidden min-h-10 items-center gap-2 rounded-full border border-white/15 px-4 text-xs font-black uppercase tracking-[0.08em] text-[#F5F1EA] transition hover:border-[#E6BEAE]/70 hover:text-[#E6BEAE] sm:inline-flex"
           aria-label="Open resume"
         >

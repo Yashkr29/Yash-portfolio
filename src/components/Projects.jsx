@@ -50,10 +50,20 @@ function ProjectRow({ project, index, featured = false }) {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <button type="button" onClick={() => handleProjectLink(project.github)} className="outline-btn">
+            <button
+              type="button"
+              onClick={() => handleProjectLink(project.github)}
+              className="outline-btn"
+              aria-label={`Open GitHub repository for ${project.name}`}
+            >
               <GitBranch size={17} /> GitHub
             </button>
-            <button type="button" onClick={() => handleProjectLink(project.demo)} className="solid-btn">
+            <button
+              type="button"
+              onClick={() => handleProjectLink(project.demo)}
+              className="solid-btn"
+              aria-label={`Open live demo for ${project.name}`}
+            >
               <ExternalLink size={17} /> Live Demo
             </button>
           </div>

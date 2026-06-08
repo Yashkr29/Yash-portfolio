@@ -1,10 +1,17 @@
 import { motion } from 'framer-motion'
-import { GitBranch, Mail, Network } from 'lucide-react'
-import { links, openEmail, openExternalLink } from '../utils/navigation.js'
+import { GitBranch, Network } from 'lucide-react'
+import { links, openExternalLink } from '../utils/navigation.js'
 
 function Hero() {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden text-[#F5F1EA] scroll-mt-24">
+      <div className="sr-only">
+        <h1>Yash Kumar</h1>
+        <p>Full-Stack Developer Intern @ AIValytics</p>
+        <p>React, Spring Boot, Java, REST APIs, MySQL, Supabase, Firebase</p>
+        <p>Building full-stack and AI-enabled web applications.</p>
+      </div>
+
       <motion.div
         className="pointer-events-none absolute inset-x-0 top-[22%] z-0 flex flex-col items-center justify-center text-center text-[15.5vw] font-black uppercase leading-[0.82] tracking-[-0.07em] text-[#F5F1EA] sm:top-[21%] sm:text-[13vw] lg:text-[11.8vw]"
         initial={{ opacity: 0 }}
@@ -51,10 +58,20 @@ function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
       >
-        <button type="button" onClick={() => openExternalLink(links.github)} className="text-[#A8A29E] transition hover:text-[#E6BEAE]">
+        <button
+          type="button"
+          onClick={() => openExternalLink(links.github)}
+          className="text-[#A8A29E] transition hover:text-[#E6BEAE]"
+          aria-label="Open Yash Kumar GitHub profile"
+        >
           <GitBranch className="mr-2 inline" size={15} /> GitHub
         </button>
-        <button type="button" onClick={() => openExternalLink(links.linkedin)} className="text-[#A8A29E] transition hover:text-[#E6BEAE]">
+        <button
+          type="button"
+          onClick={() => openExternalLink(links.linkedin)}
+          className="text-[#A8A29E] transition hover:text-[#E6BEAE]"
+          aria-label="Open Yash Kumar LinkedIn profile"
+        >
           <Network className="mr-2 inline" size={15} /> LinkedIn
         </button>
         

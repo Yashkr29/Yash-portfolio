@@ -78,6 +78,24 @@ const skillRows = [
   },
 ]
 
+const crawlerReadableSkills = [
+  'React',
+  'Spring Boot',
+  'Java',
+  'REST APIs',
+  'MySQL',
+  'Firebase',
+  'Supabase',
+  'MongoDB',
+  'Git',
+  'GitHub',
+  'Vercel',
+  'Postman',
+  'Generative AI',
+  'Prompt Engineering',
+  'API Integration',
+]
+
 function SkillLoopItem(item, key) {
   return (
     <div
@@ -101,6 +119,12 @@ function Skills() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.45 }}
       >
+        <ul className="sr-only" aria-label="Crawler-readable skills list">
+          {crawlerReadableSkills.map((skill) => (
+            <li key={skill}>{skill}</li>
+          ))}
+        </ul>
+
         <div className="mb-12 grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
             <p className="kicker mb-5">Capabilities</p>

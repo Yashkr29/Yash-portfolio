@@ -27,10 +27,10 @@ function About() {
               </p>
               <div className="mt-6 space-y-5 text-base leading-8 text-[#A8A29E] sm:text-lg">
                 <p>
-                  I am a Computer Science Engineering student and full-stack developer focused on
-                  building real-world web applications, dashboards, and AI-integrated platforms. I work
-                  with React, Java Spring Boot, Firebase, Supabase, SQL, REST APIs, and modern
-                  deployment tools to create scalable and practical solutions.
+                  I am Yash Kumar, a Full-Stack Developer focused on building scalable web
+                  applications, dashboards, backend APIs, and AI-enabled products. I work with React,
+                  Spring Boot, Java, Firebase, Supabase, MySQL, REST APIs, and modern deployment
+                  tools.
                 </p>
                 <p>
                   I am currently looking for remote internships, freelance projects, and startup
