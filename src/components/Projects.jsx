@@ -89,7 +89,7 @@ function Projects() {
             <h2 className="section-title">Selected Projects</h2>
           </div>
           <p className="max-w-2xl text-lg leading-8 text-[#A8A29E]">
-            Clean, product-focused builds across AI, finance, sustainability, and assessment tools.
+            Clean, product-focused builds across AI analytics, finance, productivity, and assessment tools.
           </p>
         </div>
 
