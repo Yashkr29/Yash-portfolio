@@ -2,7 +2,7 @@ export const links = {
   github: 'https://github.com/Yashkr29',
   linkedin: 'https://www.linkedin.com/in/yash-kumar-0813ab307',
   email: 'yashkr7970@gmail.com',
-  resume: '/resume.pdf',
+  resume: '/Yash_Kumar_Resume.pdf',
 }
 
 export const scrollToSection = (id) => {
