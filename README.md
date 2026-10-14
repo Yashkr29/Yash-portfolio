@@ -77,21 +77,20 @@ The portfolio includes:
 
 ## Featured Projects
 
-### SpeciWise
+### SmartBiz
 
-A scalable career recommendation platform for Computer Science students.
+A connected small business management platform with a natural-language AI business assistant.
 
-**Tech Stack:** React Vite, React Native Expo, Java, Spring Boot, Supabase PostgreSQL, MySQL, JWT, ML
+**Tech Stack:** React, Vite, Tailwind CSS, FastAPI, Python, SQLAlchemy, PostgreSQL (Supabase), LangChain, Google Gemini
 
 **Highlights:**
-- Custom Weighted Interest Scoring Model
-- Multi-stage adaptive assessment pipeline
-- Domain, branch, and specialization recommendation flow
-- JWT-based authentication
-- REST API integration
-- Event-level analytics
-- Cross-device synchronization
-- Supabase Row-Level Security
+- End-to-end order lifecycle and payment tracking
+- Automated real-time inventory deduction & stock protection
+- Natural-language business Q&A powered by Gemini text-to-SQL
+- Role-based access control (Admin & Staff tiers)
+- Executive sales, profit, and expense analytics dashboard
+- Supabase PostgreSQL integration with session pooler
+- Secure JWT-based authentication & bcrypt password hashing
 
 ---
 
